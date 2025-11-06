@@ -19,4 +19,8 @@ const fetchOrder = async(req,res)=>{
     }
 }
 
-module.exports = {fetchOrder}
+const updateOrderStatus = async(req,res)=>{
+
+}
+
+module.exports = {fetchOrder,updateOrderStatus}

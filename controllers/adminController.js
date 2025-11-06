@@ -104,8 +104,8 @@ console.log(adminData,'admindata')
     
     res.cookie('adminAccesstoken',accessToken,{
       httpOnly:true,
-      secure:false,
-      sameSite:"strict",
+      secure:true,
+      sameSite:"none",
       maxAge:10*60*1000,
       path:'/'
 
@@ -122,14 +122,14 @@ const logOut = async (req, res) => {
   
     res.clearCookie("adminRefreshToken", {
       httpOnly: true,      
-      secure: false,        
-      sameSite: "strict",
+      secure: true,        
+      sameSite: "none",
       path: "/",
     });
     res.clearCookie("adminAccessToken", {
       httpOnly: true,      
-      secure: false,        
-      sameSite: "strict",
+      secure: true,        
+      sameSite: "none",
       path: "/",
     });
 
