@@ -102,7 +102,7 @@ console.log(adminData,'admindata')
         {expiresIn:'10m'}
     )
     
-    res.cookie('adminAccesstoken',accessToken,{
+    res.cookie('adminAccessToken',accessToken,{
       httpOnly:true,
       secure:true,
       sameSite:"none",
