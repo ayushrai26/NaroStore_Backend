@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 require('dotenv').config({
   path:process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development'
 })
-
+const allowedOrigins = [process.env.CLIENT_URL_1,process.env.CLIENT_URL_2]
 
 
 const userRoutes = require('./routes/userRoutes')
