@@ -6,6 +6,11 @@ const cookieParser = require('cookie-parser')
 require('dotenv').config({
   path:process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development'
 })
+const allowedOrigins = [
+  process.env.CLIENT_URL_1,
+  process.env.CLIENT_URL_2
+];
+
 
 const userRoutes = require('./routes/userRoutes')
 const uploadRoutes = require('./routes/uploadroutes')
@@ -31,7 +36,7 @@ app.post(
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: [process.env.CLIENT_URL, 'http://localhost:5173'],
+  origin: [allowedOrigins, 'http://localhost:5173'],
   credentials: true,
 }))
 
